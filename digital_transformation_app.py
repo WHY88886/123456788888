@@ -10,8 +10,15 @@ import numpy as np
 import seaborn as sns
 
 # 设置中文字体
-plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'Arial Unicode MS']
+# 尝试多种常见中文字体以确保兼容性
+plt.rcParams['font.family'] = ['sans-serif']
+plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'Arial Unicode MS', 
+                                   'WenQuanYi Micro Hei', 'Heiti TC', 'PingFang SC',
+                                   'Hiragino Sans GB', 'DejaVu Sans']
 plt.rcParams['axes.unicode_minus'] = False
+
+# 确保seaborn也使用相同的字体设置
+sns.set(font='SimHei', font_scale=0.9)
 
 # 设置白色主题
 st.set_page_config(
